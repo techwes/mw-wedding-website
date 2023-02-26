@@ -1,6 +1,9 @@
+import useProtectedContent from "../hooks/useProtectedContent";
 import bgImage from "../public/tamarack_org.jpg";
+import Markdown from "./Markdown";
 
 const Home = () => {
+  const { content } = useProtectedContent("homepage.md");
   return (
     <div>
       <div
@@ -22,10 +25,7 @@ const Home = () => {
           }}
         >
           <div className="d-flex justify-content-center align-items-center height-500-px text-white">
-            <div>
-              <h1>Madalyn & Wesley</h1>
-              <p>Date: TBD</p>
-            </div>
+            {content && <Markdown markdown={content} />}
           </div>
           <div className="light-color m-5 height-500-px">More content here</div>
         </div>
