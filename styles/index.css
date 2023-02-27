@@ -32,7 +32,7 @@ code {
   color: #000000;
   background-color: #d0a151;
 }
-/* light teal: #006e80 faint gold: #b49753*/
+/* light teal: #006e80 faint gold: #b49753 light gold: #beb18a*/
 
 .min-height-300-px {
   min-height: 300px;
@@ -44,4 +44,11 @@ code {
 
 .mt-neg-200-px {
   margin-top: -200px;
+}
+
+.white-link {
+  color: white;
+}
+.white-link:hover {
+  color: #b49753;
 }

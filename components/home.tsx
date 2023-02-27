@@ -80,6 +80,7 @@ const Home = () => {
                   <Markdown markdown={registry} />
                 )}
               </div>
+              <div className="m-5">Madalyn &amp; Wesley 2023</div>
             </div>
           </div>
         </div>
