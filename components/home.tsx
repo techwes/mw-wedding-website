@@ -7,6 +7,9 @@ import NavItem from "./NavItem";
 const Home = () => {
   const { content: header } = useProtectedContent("homepage.md");
   const { content: dresscode } = useProtectedContent("dresscode.md");
+  const { content: home } = useProtectedContent("main.md");
+  const { content: about } = useProtectedContent("about.md");
+  const { content: registry } = useProtectedContent("registry.md");
 
   // should be "home" to start
   const [activeSection, setActiveSection] = useState(0);
@@ -37,7 +40,7 @@ const Home = () => {
           <div className="content">
             <div className="m-5 height-500-px">
               <div className="m-5 p-5 white-background">
-                <div>
+                <div className="mb-4">
                   <NavItem
                     id={0}
                     activeSection={activeSection}
@@ -68,8 +71,13 @@ const Home = () => {
                   </NavItem>
                 </div>
 
+                {home && activeSection === 0 && <Markdown markdown={home} />}
                 {dresscode && activeSection === 1 && (
                   <Markdown markdown={dresscode} />
+                )}
+                {about && activeSection === 2 && <Markdown markdown={about} />}
+                {registry && activeSection === 3 && (
+                  <Markdown markdown={registry} />
                 )}
               </div>
             </div>
