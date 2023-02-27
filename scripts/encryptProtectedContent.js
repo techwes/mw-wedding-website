@@ -9,7 +9,8 @@ const ab2str = (buf) => {
   }
   return btoa(out);
 };
-const encryptWithPassword = async (content, password) => {
+
+const getEncryptParams = async (password) => {
   const encoder = new TextEncoder();
   const salt = crypto.getRandomValues(new Uint8Array(32));
   const baseKey = await crypto.subtle.importKey(
@@ -26,8 +27,12 @@ const encryptWithPassword = async (content, password) => {
     false,
     ["encrypt"]
   );
-
   const iv = crypto.getRandomValues(new Uint8Array(16));
+  return { salt, key, iv };
+};
+
+const encryptWithPassword = async ({ content, salt, key, iv }) => {
+  const encoder = new TextEncoder();
   const ciphertext = new Uint8Array(
     await crypto.subtle.encrypt(
       { name: "AES-GCM", iv },
@@ -49,12 +54,16 @@ const run = async () => {
     await readFile(".private.env.json", "utf-8")
   );
   const contentFiles = await readdir(unencryptedDirectory);
+  const encryptionParams = await getEncryptParams(password);
   const encryptedFiles = await Promise.all(
     contentFiles.map(async (file) => {
       const content = await readFile(unencryptedDirectory + file, "utf-8");
       return {
         name: file,
-        encryptedContent: await encryptWithPassword(content, password),
+        encryptedContent: await encryptWithPassword({
+          content,
+          ...encryptionParams,
+        }),
       };
     })
   );

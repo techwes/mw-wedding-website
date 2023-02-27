@@ -4,7 +4,7 @@ body {
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif; */
   font-family: "Quicksand", sans-serif !important ;
-  font-weight: 300;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -14,15 +14,20 @@ code {
     monospace;
 }
 
+.content {
+  font-size: x-large;
+}
+
 .dark-color {
   color: #1c3835;
   background-color: #003740;
 }
 
 .light-color {
-  color: #006e80;
-  background-color: #006e80;
+  color: #000000;
+  background-color: #d0a151;
 }
+/* light teal: #006e80 faint gold: #b49753*/
 
 .min-height-300-px {
   min-height: 300px;

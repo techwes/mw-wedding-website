@@ -3,7 +3,8 @@ import bgImage from "../public/tamarack_org.jpg";
 import Markdown from "./Markdown";
 
 const Home = () => {
-  const { content } = useProtectedContent("homepage.md");
+  const { content: home } = useProtectedContent("homepage.md");
+  const { content: dresscode } = useProtectedContent("dresscode.md");
   return (
     <div>
       <div
@@ -25,9 +26,14 @@ const Home = () => {
           }}
         >
           <div className="d-flex justify-content-center align-items-center height-500-px text-white">
-            {content && <Markdown markdown={content} />}
+            {home && <Markdown markdown={home} />}
           </div>
-          <div className="light-color m-5 height-500-px">More content here</div>
+          <div className="content">
+            <div className="light-color m-5 height-500-px">
+              <div>NAV</div>
+              {dresscode && <Markdown markdown={dresscode} />}
+            </div>
+          </div>
         </div>
       </div>
       <div className="vh-50 p-5">
