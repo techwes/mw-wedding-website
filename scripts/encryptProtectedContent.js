@@ -9,10 +9,41 @@ const ab2str = (buf) => {
   }
   return btoa(out);
 };
+function str2ab(str) {
+  var ustr = atob(str);
+  var buf = new ArrayBuffer(ustr.length);
+  var bufView = new Uint8Array(buf);
+  for (var i = 0, strLen = ustr.length; i < strLen; i++) {
+    bufView[i] = ustr.charCodeAt(i);
+  }
+  return bufView;
+}
+function splitEncryptedContent(encryptedContent) {
+  const unencodedPl = str2ab(encryptedContent);
+  return {
+    salt: unencodedPl.slice(0, 32),
+    initializationVector: unencodedPl.slice(32, 32 + 16),
+    encryptedText: unencodedPl.slice(32 + 16),
+  };
+}
 
-const getEncryptParams = async (password) => {
+const getEncryptKeyParams = async (password) => {
   const encoder = new TextEncoder();
-  const salt = crypto.getRandomValues(new Uint8Array(32));
+  let salt;
+  try {
+    // Resuse the salt if we can so that everyone who is
+    // logged in stays logged in
+    const encryptedJSON = JSON.parse(
+      await readFile("lib/encrypted_content.json")
+    );
+    const encryptedContent = splitEncryptedContent(
+      encryptedJSON[Object.keys(encryptedJSON)[0]]
+    );
+    salt = encryptedContent.salt;
+  } catch (e) {
+    console.log("No encrypted content found, generating new salt");
+    salt = crypto.getRandomValues(new Uint8Array(32));
+  }
   const baseKey = await crypto.subtle.importKey(
     "raw",
     encoder.encode(password),
@@ -27,8 +58,7 @@ const getEncryptParams = async (password) => {
     false,
     ["encrypt"]
   );
-  const iv = crypto.getRandomValues(new Uint8Array(16));
-  return { salt, key, iv };
+  return { salt, key };
 };
 
 const encryptWithPassword = async ({ content, salt, key, iv }) => {
@@ -54,15 +84,17 @@ const run = async () => {
     await readFile(".private.env.json", "utf-8")
   );
   const contentFiles = await readdir(unencryptedDirectory);
-  const encryptionParams = await getEncryptParams(password);
+  const encryptionParams = await getEncryptKeyParams(password);
   const encryptedFiles = await Promise.all(
     contentFiles.map(async (file) => {
       const content = await readFile(unencryptedDirectory + file, "utf-8");
+      const iv = crypto.getRandomValues(new Uint8Array(16));
       return {
         name: file,
         encryptedContent: await encryptWithPassword({
           content,
           ...encryptionParams,
+          iv,
         }),
       };
     })
