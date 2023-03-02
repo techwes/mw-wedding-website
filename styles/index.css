@@ -52,3 +52,11 @@ code {
 .white-link:hover {
   color: #b49753;
 }
+
+.rsvp-embed {
+  display: block;
+  width: 100%;
+  max-width: 750px;
+  border: none;
+  height: 1000px;
+}
