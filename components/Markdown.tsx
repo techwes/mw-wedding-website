@@ -10,7 +10,7 @@ const Markdown: React.FunctionComponent<Props> = ({
   ...divProps
 }) => {
   const html = useMemo(() => {
-    return { __html: micromark(markdown) };
+    return { __html: micromark(markdown, { allowDangerousHtml: true }) };
   }, [markdown]);
   return <div {...divProps} dangerouslySetInnerHTML={html} />;
 };
