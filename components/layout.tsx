@@ -2,6 +2,7 @@ import { PropsWithChildren } from "react";
 import useProtectedContent from "../hooks/useProtectedContent";
 import bgImage from "../public/tamarack_org.jpg";
 import Markdown from "./Markdown";
+import NavItem from "./NavItem";
 
 const Layout: React.FunctionComponent<PropsWithChildren> = ({ children }) => {
   const { content: header } = useProtectedContent("header.md");
@@ -31,6 +32,12 @@ const Layout: React.FunctionComponent<PropsWithChildren> = ({ children }) => {
           <div className="content">
             <div className="m-5 height-500-px">
               <div className="m-5 p-5 white-background">
+                <div className="mb-4">
+                  <NavItem path="/">The Wedding!</NavItem>
+                  <NavItem path="/dresscode">Dress Code</NavItem>
+                  <NavItem path="/about">M &amp; W</NavItem>
+                  <NavItem path="/registry">Registry</NavItem>
+                </div>
                 {children}
                 <div className="m-5">Madalyn &amp; Wesley 2023</div>
               </div>

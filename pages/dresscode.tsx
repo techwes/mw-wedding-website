@@ -1,21 +1,21 @@
 import { NextPage } from "next";
 import ProtectedMarkdown from "../components/protectedMarkdown";
 
-const RSVPPage: NextPage = () => {
+const DressCodePage: NextPage = () => {
   return (
     <main>
-      <ProtectedMarkdown contentName="rsvp.md" />
+      <ProtectedMarkdown contentName="dresscode.md" />
     </main>
   );
 };
 
-export default RSVPPage;
+export default DressCodePage;
 
 export async function getStaticProps() {
   return {
     props: {
       _app: {
-        title: "RSVP for Madalyn Coryea and Wesley Ripley's Wedding",
+        title: "Dress Code for Madalyn Coryea and Wesley Ripley's Wedding",
       },
     },
   };
