@@ -6,7 +6,7 @@
     "preexport": "npm run build",
     "export": "next export -o docs",
     "prestart": "npm run export",
-    "start": "serve out",
+    "start": "serve docs",
     "lint": "next lint",
     "encrypt": "node ./scripts/encryptProtectedContent.js",
     "decrypt": "node ./scripts/decryptProtectedContent.js"
