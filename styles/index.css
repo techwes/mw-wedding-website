@@ -4,14 +4,23 @@ body {
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif; */
   font-family: "Quicksand", sans-serif !important ;
-  font-weight: 300;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #ffffff;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.content {
+  font-size: x-large;
+}
+
+.white-background {
+  background: #edd6af;
 }
 
 .dark-color {
@@ -20,9 +29,10 @@ code {
 }
 
 .light-color {
-  color: #006e80;
-  background-color: #006e80;
+  color: #000000;
+  background-color: #d0a151;
 }
+/* light teal: #006e80 faint gold: #b49753 light gold: #beb18a*/
 
 .min-height-300-px {
   min-height: 300px;
@@ -34,4 +44,19 @@ code {
 
 .mt-neg-200-px {
   margin-top: -200px;
+}
+
+.white-link {
+  color: white;
+}
+.white-link:hover {
+  color: #b49753;
+}
+
+.rsvp-embed {
+  display: block;
+  width: 100%;
+  max-width: 750px;
+  border: none;
+  height: 1000px;
 }

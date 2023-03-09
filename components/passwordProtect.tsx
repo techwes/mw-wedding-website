@@ -7,6 +7,7 @@ import decryptWithSessionKey, {
   SESSION_STORAGE_KEY,
 } from "../lib/decryptWithSessionKey";
 import styles from "../styles/password.module.scss";
+import Layout from "./layout";
 
 const getEncryptedTest = () => {
   const encryptedContentKeys = Object.keys(encryptedContent) as Array<
@@ -43,7 +44,7 @@ const PasswordProtect: React.FunctionComponent<PropsWithChildren> = ({
     return <span />;
   }
   if (accessLevel === AccessLevel.allowed) {
-    return <>{children}</>;
+    return <Layout>{children}</Layout>;
   }
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
