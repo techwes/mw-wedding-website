@@ -9,8 +9,9 @@ const Home = () => {
   }
   return (
     <>
-      <h1>RSVP</h1>
-      <Link href="/rsvp">RSVP here</Link>
+      <Link href="/rsvp" className="fs-1 lh-lg" role="button">
+        Click here to RSVP
+      </Link>
       <Markdown markdown={content} />
     </>
   );
