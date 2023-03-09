@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { micromark } from "micromark";
 
-interface Props extends React.HTMLAttributes<HTMLDivElement> {
+export interface Props extends React.HTMLAttributes<HTMLDivElement> {
   markdown: string;
 }
 
