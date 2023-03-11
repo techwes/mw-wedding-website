@@ -7,7 +7,7 @@ import NavItem from "./NavItem";
 const Layout: React.FunctionComponent<PropsWithChildren> = ({ children }) => {
   const { content: header } = useProtectedContent("header.md");
   return (
-    <div>
+    <div className="Layout">
       <div
         className="bg-image"
         style={{
@@ -26,13 +26,18 @@ const Layout: React.FunctionComponent<PropsWithChildren> = ({ children }) => {
             minHeight: "100vh",
           }}
         >
-          <header className="d-flex justify-content-center align-items-center height-500-px text-white">
-            {header && <Markdown markdown={header} />}
+          <header className="text-white Layout-header">
+            {header && (
+              <Markdown
+                className="d-flex justify-content-center align-items-center flex-column h-100"
+                markdown={header}
+              />
+            )}
           </header>
           <div className="content">
-            <div className="m-5 height-500-px">
-              <div className="m-5 p-5 white-background">
-                <div className="mb-4">
+            <div className="m-lg-3 height-500-px">
+              <div className="m-lg-3 p-3 p-md-5 white-background">
+                <div className="mb-3">
                   <NavItem path="/">The Wedding!</NavItem>
                   <NavItem path="/dresscode">Dress Code</NavItem>
                   <NavItem path="/about">M &amp; W</NavItem>
