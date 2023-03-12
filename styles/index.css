@@ -34,7 +34,7 @@ code {
 }
 /* light teal: #006e80 faint gold: #b49753 light gold: #beb18a*/
 .light-teal {
-  color: #006e80;
+  color: #006e80 !important;
 }
 
 .font-smaller {
@@ -48,12 +48,19 @@ code {
 }
 .nav-item:hover {
   text-decoration: underline;
+  text-underline-offset: 50%;
+  font-weight: bold;
   color: #b49753;
 }
 .nav-item:active {
-  text-decoration: underline;
+  text-decoration: none;
   font-weight: bold;
   color: #b49753 !important;
+}
+.active-nav-item {
+  text-decoration: underline;
+  text-underline-offset: 50%;
+  font-weight: bold;
 }
 
 .nav-item-symbol {

@@ -18,8 +18,9 @@ const NavItem: React.FunctionComponent<PropsWithChildren<Props>> = ({
     <>
       <Link
         href={path}
-        className={`btn btn-link ${buttonClass} mx-2 mb-2 nav-item`}
-        color={isActiveLink ? "light" : "success"}
+        className={`btn btn-link ${buttonClass} mx-2 mb-2 nav-item ${
+          isActiveLink ? "active-nav-item" : ""
+        }`}
       >
         {children}
       </Link>
