@@ -37,7 +37,7 @@ const Layout: React.FunctionComponent<PropsWithChildren> = ({ children }) => {
           <div className="content">
             <div className="m-lg-3 height-500-px">
               <div className="m-lg-3 p-3 p-md-5 white-background">
-                <div className="mb-3">
+                <div className="mb-3 text-center">
                   <NavItem path="/">The Wedding!</NavItem>
                   <NavItem path="/dresscode">Dress Code</NavItem>
                   <NavItem path="/about">M &amp; W</NavItem>

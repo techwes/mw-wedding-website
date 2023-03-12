@@ -10,7 +10,7 @@ interface Props {
 const NavItem: React.FunctionComponent<PropsWithChildren<Props>> = ({
   path,
   children,
-  buttonClass = "btn-secondary",
+  buttonClass = "",
 }) => {
   const router = useRouter();
   const isActiveLink = router.pathname === path;
@@ -18,7 +18,7 @@ const NavItem: React.FunctionComponent<PropsWithChildren<Props>> = ({
     <>
       <Link
         href={path}
-        className={`btn ${buttonClass} me-2 mb-2`}
+        className={`btn btn-link ${buttonClass} me-2 mb-2`}
         color={isActiveLink ? "light" : "success"}
       >
         {children}
