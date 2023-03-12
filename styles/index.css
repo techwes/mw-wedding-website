@@ -56,6 +56,12 @@ code {
   color: #b49753 !important;
 }
 
+.nav-item-symbol {
+  text-decoration: none;
+  color: #b49753;
+  font-size: smaller;
+}
+
 .min-height-300-px {
   min-height: 300px;
 }

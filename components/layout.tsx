@@ -39,9 +39,13 @@ const Layout: React.FunctionComponent<PropsWithChildren> = ({ children }) => {
               <div className="m-lg-3 p-3 p-md-5 white-background">
                 <div className="mb-3 text-center">
                   <NavItem path="/">The Wedding!</NavItem>
+                  <span className="nav-item-symbol">&#10022;</span>
                   <NavItem path="/dresscode">Dress Code</NavItem>
+                  <span className="nav-item-symbol">&#10022;</span>
                   <NavItem path="/about">M &amp; W</NavItem>
+                  <span className="nav-item-symbol">&#10022;</span>
                   <NavItem path="/registry">Registry</NavItem>
+                  <span className="nav-item-symbol">&#10022;</span>
                   <NavItem path="/rsvp" buttonClass="btn-success">
                     RSVP Here
                   </NavItem>
