@@ -151,4 +151,5 @@ code {
   max-width: 750px;
   border: none;
   height: 1000px;
+  margin: 0 auto;
 }
