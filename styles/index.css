@@ -41,6 +41,11 @@ code {
   font-size: smaller;
 }
 
+.big-button {
+  background-color: #006e80;
+  color: white;
+}
+
 .nav-item {
   text-decoration: none;
   color: #b49753;

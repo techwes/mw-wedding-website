@@ -14,7 +14,11 @@ const Home = () => {
           We hope you will attend our Forest Gala Wedding
         </h1>
         <p>The official timeline will be shared here closer to the event.</p>
-        <Link href="/rsvp" className="fs-1 lh-lg" role="button">
+        <Link
+          href="/rsvp"
+          className="fs-1 lh-lg btn btn-info big-button px-5 my-4"
+          role="button"
+        >
           Click here to RSVP
         </Link>
       </div>
