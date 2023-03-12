@@ -41,6 +41,21 @@ code {
   font-size: smaller;
 }
 
+.nav-item {
+  text-decoration: none;
+  color: #b49753;
+  font-size: smaller;
+}
+.nav-item:hover {
+  text-decoration: underline;
+  color: #b49753;
+}
+.nav-item:active {
+  text-decoration: underline;
+  font-weight: bold;
+  color: #b49753 !important;
+}
+
 .min-height-300-px {
   min-height: 300px;
 }
