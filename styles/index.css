@@ -16,7 +16,7 @@ code {
 }
 
 .content {
-  font-size: x-large;
+  font-size: 1.5rem;
 }
 
 .white-background {
@@ -33,6 +33,47 @@ code {
   background-color: #d0a151;
 }
 /* light teal: #006e80 faint gold: #b49753 light gold: #beb18a*/
+.light-teal {
+  color: #006e80 !important;
+}
+
+.font-smaller {
+  font-size: smaller;
+}
+
+.big-button {
+  background-color: #006e80;
+  color: white;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: #b49753;
+  font-size: smaller;
+}
+.nav-item:hover,
+.nav-item:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 50%;
+  font-weight: bold;
+  color: #b49753;
+}
+.nav-item:active {
+  text-decoration: none;
+  font-weight: bold;
+  color: #b49753 !important;
+}
+.active-nav-item {
+  text-decoration: underline;
+  text-underline-offset: 50%;
+  font-weight: bold;
+}
+
+.nav-item-symbol {
+  text-decoration: none;
+  color: #b49753;
+  font-size: smaller;
+}
 
 .min-height-300-px {
   min-height: 300px;
@@ -110,4 +151,5 @@ code {
   max-width: 750px;
   border: none;
   height: 1000px;
+  margin: 0 auto;
 }

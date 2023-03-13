@@ -37,17 +37,34 @@ const Layout: React.FunctionComponent<PropsWithChildren> = ({ children }) => {
           <div className="content">
             <div className="m-lg-3 height-500-px">
               <div className="m-lg-3 p-3 p-md-5 white-background">
-                <div className="mb-3">
+                <div className="mb-3 text-center">
                   <NavItem path="/">The Wedding!</NavItem>
+                  <span className="nav-item-symbol">&#10022;</span>
                   <NavItem path="/dresscode">Dress Code</NavItem>
+                  <span className="nav-item-symbol">&#10022;</span>
                   <NavItem path="/about">M &amp; W</NavItem>
+                  <span className="nav-item-symbol">&#10022;</span>
                   <NavItem path="/registry">Registry</NavItem>
-                  <NavItem path="/rsvp" buttonClass="btn-success">
+                  <span className="nav-item-symbol">&#10022;</span>
+                  <NavItem path="/rsvp" buttonClass="light-teal fw-bold">
                     RSVP Here
                   </NavItem>
                 </div>
                 {children}
-                <div className="m-5">Madalyn &amp; Wesley 2023</div>
+                <div className="m-5 text-center light-teal font-smaller">
+                  <hr />
+                  <div>Built by Madalyn &amp; Wesley with Love - 2023</div>
+                  <div>
+                    Checkout out our{" "}
+                    <a
+                      href="https://github.com/techwes/mw-wedding-website"
+                      target="_blank"
+                    >
+                      GitHub
+                    </a>{" "}
+                    Repo!
+                  </div>
+                </div>
               </div>
             </div>
           </div>
