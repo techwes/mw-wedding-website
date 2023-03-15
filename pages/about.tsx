@@ -4,6 +4,9 @@ import ProtectedMarkdown from "../components/protectedMarkdown";
 const AboutPage: NextPage = () => {
   return (
     <main>
+      <div className="text-center">
+        <ProtectedMarkdown contentName="slides.md" />
+      </div>
       <ProtectedMarkdown contentName="about.md" />
     </main>
   );
