@@ -4,7 +4,7 @@ import ProtectedMarkdown from "../components/protectedMarkdown";
 const AboutPage: NextPage = () => {
   return (
     <main>
-      <div className="text-center">
+      <div className="slideshow mb-3">
         <ProtectedMarkdown contentName="slides.md" />
       </div>
       <ProtectedMarkdown contentName="about.md" />
